@@ -1,0 +1,14 @@
+<div id="container">
+  <button mat-raised-button (click)="minus()">
+    <mat-icon aria-label="">remove_circle</mat-icon>
+  </button> 
+  <mat-form-field class="example-form-field">
+    <input matInput type="text" placeholder="{{pHolder}}" [(ngModel)]="value" width="2">
+    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+      <mat-icon>close</mat-icon>  
+    </button>                     
+  </mat-form-field>
+  <button mat-raised-button (click)="plus()">
+    <mat-icon aria-label="">add_circle</mat-icon>
+  </button>
+</div>

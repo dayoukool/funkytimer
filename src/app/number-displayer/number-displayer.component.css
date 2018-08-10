@@ -1,0 +1,19 @@
+.count {
+  display: flex;
+  flex-direction: row;
+  font-size: 20vw;
+  font-family: 'timeforsalad';
+}
+
+.timeContainer{
+  display: flex;
+  border: black 1px solid;
+  justify-content: center; 
+  width: 25vw;
+  border-radius: 5vw;
+  margin: 15px;
+}
+
+.time{
+  align-self: center;
+}

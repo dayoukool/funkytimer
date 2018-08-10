@@ -1,0 +1,7 @@
+<div class="count" >
+   <div class="timeContainer" *ngIf="value[0]!=0">{{value[0]}}</div> 
+   <div class=""  *ngIf="value[0]!=0">:</div> 
+   <div class="timeContainer" *ngIf="value[0]!=0 || (value[0]==0 && value[1]!=0)">{{value[1]}}</div> 
+   <div class="" *ngIf="value[0]!=0 || (value[0]==0 && value[1]!=0)">:</div> 
+   <div class="timeContainer"><div class="time">{{value[2]}}</div></div> 
+</div>
