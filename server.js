@@ -34,7 +34,7 @@ app.use(express.static(__dirname + '/dist/agileApps'))
 .use(cors())
 .use(cookieParser());
 
-app.get('/', function (req, res) {
+app.get('/timer', function (req, res) {
     res.sendFile(path.join(__dirname + '/dist/agileApps/index.html'));
 });
 app.get('/login', function (req, res) {
@@ -141,5 +141,4 @@ app.get('/refresh_token', function (req, res) {
 });
 
 console.log('Listening on ' + (process.env.PORT||8080));   
-// Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 8080);
