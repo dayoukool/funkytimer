@@ -37,9 +37,6 @@ app.use(express.static(__dirname + '/dist/agileApps'))
 app.get('/timer', function (req, res) {
     res.sendFile(path.join(__dirname + '/dist/agileApps/index.html'));
 });
-app.get('/timer#*', function (req, res) {
-    res.sendFile(path.join(__dirname + '/dist/agileApps/index.html'));
-});
 app.get('/login', function (req, res) {
     var state = generateRandomString(16);
     res.cookie(stateKey, state);

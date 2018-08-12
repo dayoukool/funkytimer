@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router  } from '@angular/router';
 import { interval } from 'rxjs';
 
 @Component({
@@ -23,7 +23,7 @@ export class TimerComponent implements OnInit {
     this.audio = new Audio();
     this.audio.loop = true;
     this.audio.src = 'assets/MCHammer.mp3';
-    this.route.params.subscribe(params => console.log(params));
+    this.route.queryParams.subscribe(params => console.log(params));
     // this.audio.src = 'https://soundcloud.com/justin-williams-111/you-cant-touch-this';
   }
 
