@@ -5,7 +5,6 @@ import { MatToolbarModule, MatIconModule, MatFormFieldModule, MatInputModule, Ma
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-
 import { AppComponent } from './app.component';
 // Components
 import { TimerComponent } from './timer/timer.component';
@@ -13,10 +12,10 @@ import { NumberSelectorComponent } from './number-selector/number-selector.compo
 import { NumberDisplayerComponent } from './number-displayer/number-displayer.component';
 
 // Routes
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'timer' },
-  { path: 'timer', component: TimerComponent },
+  { path: '/timer', component: TimerComponent },
 ];
 
 export const appRouting = RouterModule.forRoot(routes);

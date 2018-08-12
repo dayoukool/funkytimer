@@ -37,6 +37,9 @@ app.use(express.static(__dirname + '/dist/agileApps'))
 app.get('/timer', function (req, res) {
     res.sendFile(path.join(__dirname + '/dist/agileApps/index.html'));
 });
+app.get('/timer#*', function (req, res) {
+    res.sendFile(path.join(__dirname + '/dist/agileApps/index.html'));
+});
 app.get('/login', function (req, res) {
     var state = generateRandomString(16);
     res.cookie(stateKey, state);
@@ -100,13 +103,13 @@ app.get('/callback', function (req, res) {
                 });
 
                 // we can also pass the token to the browser to make requests from there
-                res.redirect('/#' +
+                res.redirect('/?' +
                     querystring.stringify({
                         access_token: access_token,
                         refresh_token: refresh_token
                     }));
             } else {
-                res.redirect('/#' +
+                res.redirect('/?' +
                     querystring.stringify({
                         error: 'invalid_token'
                     }));
