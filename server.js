@@ -34,7 +34,7 @@ app.use(express.static(__dirname + '/dist/agileApps'))
 .use(cors())
 .use(cookieParser());
 
-app.get('/', function (req, res) {
+app.get('/timer', function (req, res) {
     res.sendFile(path.join(__dirname + '/dist/agileApps/index.html'));
 });
 app.get('/login', function (req, res) {
