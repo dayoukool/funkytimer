@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser');
 
 var client_id = '9c14abd0243346d296cd40a262fb59c2'; // Your client id
 var client_secret = '5275c2994f2545dbab121a1141bd70fe'; // Your secret
-var redirect_uri = 'http://www.funkytimer.tk'; // Your redirect uri
+var redirect_uri = 'http://www.funkytimer.tk/callback'; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
