@@ -15,7 +15,7 @@ import { NumberDisplayerComponent } from './number-displayer/number-displayer.co
 // Routes
 import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'welcome' },
+  { path: '', pathMatch: 'full', redirectTo: 'timer' },
   { path: 'timer', component: TimerComponent },
 ];
 
