@@ -39,7 +39,10 @@ export class TimerComponent implements OnInit {
       this.ticTac();
     });
   }
-
+  login(){
+    console.log('login')
+    document.location.href = 'http://www.funkytimer.tk/login';
+  }
   getHMS() {
     return new Date(this.myTime * 1000).toISOString().substr(11, 8).split(':');
   }

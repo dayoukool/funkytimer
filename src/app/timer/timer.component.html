@@ -1,3 +1,7 @@
+<button mat-fab class="mat-fab-top-right" (click)="login()">
+  <!-- <img src="assets/spotify.png"> -->
+  <mat-icon aria-label="Example icon-button with a headset">headset</mat-icon>
+</button>
 <div style="display: flex;flex-direction: row;justify-content: center;margin:20px ">
   <app-number-selector [defaultValue]="" [value]="hours" (change)="updateHours($event)" [pHolder]="'heures'"></app-number-selector>
   <app-number-selector [defaultValue]="3" [value]="min" (change)="updateMin($event)" [pHolder]="'minutes'"></app-number-selector>
