@@ -40,7 +40,7 @@ export class TimerComponent implements OnInit {
     });
   }
   login(){
-    console.log('login')
+    console.log('login');
     document.location.href = 'http://www.funkytimer.tk/login';
   }
   getHMS() {
