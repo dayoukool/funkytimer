@@ -23,10 +23,9 @@ export class TimerComponent implements OnInit {
     this.audio = new Audio();
     this.audio.loop = true;
     this.audio.src = 'assets/MCHammer.mp3';
-    this.route.queryParams.subscribe(params => console.log(params));
     // this.audio.src = 'https://soundcloud.com/justin-williams-111/you-cant-touch-this';
   }
-
+  
   ngOnInit() {
     this.running = false;
     this.increment = false;
@@ -38,6 +37,8 @@ export class TimerComponent implements OnInit {
     timer.subscribe(t => {
       this.ticTac();
     });
+    this.route.queryParams.subscribe(params => console.log(params));
+
   }
   login(){
     console.log('login');

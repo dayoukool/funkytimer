@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule, MatIconModule, MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/material';
+import { MatToolbarModule, MatIconModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatSidenavModule } from '@angular/material';
 
 import { NgModule, Injectable } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -35,6 +35,7 @@ export const appRouting = RouterModule.forRoot(routes);
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatSidenavModule,
     appRouting,
     RouterModule
   ],
