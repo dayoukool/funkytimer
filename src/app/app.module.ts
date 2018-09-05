@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule, MatIconModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatSidenavModule } from '@angular/material';
-
+import { MatToolbarModule, MatIconModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatSidenavModule, MatListModule, MatSlideToggleModule } from '@angular/material';
 import { NgModule, Injectable } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
 // Components
@@ -13,6 +14,7 @@ import { NumberDisplayerComponent } from './number-displayer/number-displayer.co
 
 // Routes
 import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
+import { SpotifyComponent } from './spotify/spotify.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'timer' },
   { path: 'timer', component: TimerComponent },
@@ -24,11 +26,13 @@ export const appRouting = RouterModule.forRoot(routes);
     AppComponent,
     TimerComponent,
     NumberDisplayerComponent,
-    NumberSelectorComponent
+    NumberSelectorComponent,
+    SpotifyComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     FormsModule,
     MatToolbarModule,
     MatIconModule,
@@ -36,6 +40,8 @@ export const appRouting = RouterModule.forRoot(routes);
     MatInputModule,
     MatButtonModule,
     MatSidenavModule,
+    MatListModule,
+    MatSlideToggleModule,
     appRouting,
     RouterModule
   ],

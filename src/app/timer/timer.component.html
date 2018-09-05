@@ -3,20 +3,32 @@
   <mat-icon aria-label="Example icon-button with a headset">headset</mat-icon>
 </button>
   <div style="display: flex;flex-direction: row;justify-content: center;margin:20px ">
-    <app-number-selector [defaultValue]="" [value]="hours" (change)="updateHours($event)" [pHolder]="'heures'"></app-number-selector>
-    <app-number-selector [defaultValue]="3" [value]="min" (change)="updateMin($event)" [pHolder]="'minutes'"></app-number-selector>
-    <app-number-selector [defaultValue]="" [value]="sec" (change)="updateSec($event)" [pHolder]="'secondes'"></app-number-selector>
-    <button (click)="reinit()" mat-fab style="align-self: center;  margin: 5px;">
-      <mat-icon aria-label="Example icon-button with a heart icon">settings_backup_restore</mat-icon>
-    </button>
-    <button (click)="start()" mat-fab color="primary" style="align-self: center;  margin: 5px;">
-      <mat-icon aria-label="Example icon-button with a heart icon">play_circle_outline</mat-icon>
-    </button>
-    <button (click)="stop()" mat-fab color="Paleblue" style="align-self: center; margin: 5px;">
-      <mat-icon aria-label="Example icon-button with a heart icon">pause_circle_outline</mat-icon>
-    </button>
+    <div style="display: flex;flex-direction: column;justify-content: center;margin:20px ">
+      <div style="display: flex;flex-direction: row;justify-content: center;margin:20px ">
+        <mat-slide-toggle (change)="toggleMuic()" [checked]="playMusic" style="align-self: center; margin: 5px;">
+          play music 
+        </mat-slide-toggle>
+        <app-number-selector [defaultValue]="" [value]="hours" (change)="updateHours($event)" [pHolder]="'heures'"></app-number-selector>
+        <app-number-selector [defaultValue]="3" [value]="min" (change)="updateMin($event)" [pHolder]="'minutes'"></app-number-selector>
+        <app-number-selector [defaultValue]="" [value]="sec" (change)="updateSec($event)" [pHolder]="'secondes'"></app-number-selector>
+        <button (click)="reinit()" mat-fab style="align-self: center;  margin: 5px;">
+          <mat-icon aria-label="Example icon-button with a heart icon">settings_backup_restore</mat-icon>
+        </button>
+        <button (click)="start()" mat-fab color="primary" style="align-self: center;  margin: 5px;">
+          <mat-icon aria-label="Example icon-button with a heart icon">play_circle_outline</mat-icon>
+        </button>
+        <button (click)="stop()" mat-fab color="Paleblue" style="align-self: center; margin: 5px;">
+          <mat-icon aria-label="Example icon-button with a heart icon">pause_circle_outline</mat-icon>
+        </button>
+        
+      </div>
+      <div style="display: flex;flex-direction: row;justify-content: center;margin:20px ">
+        <app-number-displayer [value]="getHMS()" [ngClass]="{'shake': doWarn, 'infiniteshake' : myTime === 0}"></app-number-displayer>
+      </div>
+    </div>
+    <div>
+        <app-spotify></app-spotify>
+    </div>
   </div>
-  <div style="display: flex;flex-direction: row;justify-content: center;margin:20px ">
-    <app-number-displayer [value]="getHMS()" [ngClass]="{'shake': doWarn, 'infiniteshake' : myTime === 0}"></app-number-displayer>
-  </div>
+
 

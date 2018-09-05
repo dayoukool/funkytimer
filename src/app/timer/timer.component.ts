@@ -18,11 +18,13 @@ export class TimerComponent implements OnInit {
   min: number;
   sec: number;
   warn: number;
+  playMusic: boolean;
 
   constructor(private route: ActivatedRoute, private router: Router) {
     this.audio = new Audio();
     this.audio.loop = true;
     this.audio.src = 'assets/MCHammer.mp3';
+    this.playMusic = true;
     // this.audio.src = 'https://soundcloud.com/justin-williams-111/you-cant-touch-this';
   }
   
@@ -44,6 +46,14 @@ export class TimerComponent implements OnInit {
     console.log('login');
     document.location.href = 'http://agileapps.herokuapp.com/login';
   }
+  toggleMuic() {
+    this.playMusic = !this.playMusic;
+    if(this.playMusic === true){
+      this.audio.play();
+    }else{
+      this.stop();  
+    }
+  }
   getHMS() {
     return new Date(this.myTime * 1000).toISOString().substr(11, 8).split(':');
   }
@@ -52,12 +62,12 @@ export class TimerComponent implements OnInit {
     this.doWarn = false;
     this.audio.load();
     // tslint:disable-next-line:curly
-    if (this.running === true) this.audio.play();
+    if (this.running === true && this.playMusic === true) this.audio.play();
   }
 
   start() {
     this.running = true;
-    this.audio.play();
+    if (this.running === true && this.playMusic === true) this.audio.play();
   }
 
   stop() {
