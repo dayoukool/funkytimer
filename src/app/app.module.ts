@@ -14,7 +14,7 @@ import { NumberDisplayerComponent } from './number-displayer/number-displayer.co
 
 // Routes
 import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
-import { SpotifyComponent } from './spotify/spotify.component';
+// import { SpotifyComponent } from './spotify/spotify.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'timer' },
   { path: 'timer', component: TimerComponent },
@@ -27,7 +27,7 @@ export const appRouting = RouterModule.forRoot(routes);
     TimerComponent,
     NumberDisplayerComponent,
     NumberSelectorComponent,
-    SpotifyComponent,
+    // SpotifyComponent,
   ],
   imports: [
     BrowserModule,
